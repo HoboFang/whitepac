@@ -24,7 +24,9 @@ function isIpInList(hostip, iplist) {
 
 function FindProxyForURL(url, host) {
     alert('host = ' + host);
-    var ip_arr = dnsResolve(host).split('.');
+    var host_ip = dnsResolve(host);
+    alert('host_ip = ' + host_ip);
+    var ip_arr = host_ip.split('.');
     // can't use convert_addr(),may get a negative value
     var ip_int = 0;
     for (var i=0, b=24; i < 4; i++, b-=8) {

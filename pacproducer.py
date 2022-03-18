@@ -85,7 +85,7 @@ def buildWhiteTree(asiaraw, region):
 def main():
     args = sys.argv[1:]
     if '-u' in args:
-        print('Updating text,this may take several minutes...')
+        print('Updating text,this may take a while...')
         with open(RAWSPECIP, 'wt') as fspec:
             fspec.write(requests.get(URLSPECIP).text)
         with open(RAWASIAIP, 'wt') as fasia:
