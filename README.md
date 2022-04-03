@@ -15,6 +15,7 @@ SwitchyOmega与Firefox已测试，PAC链接：
 <https://raw.githubusercontent.com/HoboFang/whitepac/main/whiteip.pac>
 
 生成默认PAC：
+
 `./pacproducer.py`
 
 生成指定地区PAC:
