@@ -1,7 +1,7 @@
 var proxy = 'SOCKS5 127.0.0.1:7890';
 
 // these ips belong to 'CN',but need to be proxied
-var exceptionips = {"103.56.16.112": "google.com.hk"};
+var exceptionips = {"103.56.16.112": "google.com.hk", "203.208.50.66": "gstatic.com"};
 
 var specialips = {/*ReplaceSpec*/};
 
