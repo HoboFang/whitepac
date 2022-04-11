@@ -1,8 +1,5 @@
 var proxy = 'SOCKS5 127.0.0.1:7890';
 
-// these ips belong to 'CN',but need to be proxied
-var exceptionips = {"103.56.16.112": "google.com.hk"};
-
 var specialips = {/*ReplaceSpec*/};
 
 var whiteips = {/*ReplaceWhite*/};
@@ -30,9 +27,9 @@ function FindProxyForURL(url, host) {
     var host_ip = dnsResolve(host);
     alert('host_ip = ' + host_ip);
 
-    if (host_ip in exceptionips) {
-        alert('+++++PROXY+++++');
-        return proxy; 
+    if (host_ip === null) {
+        alert('!!!!!DNS resolve failed!!!!!');
+        return 'DIRECT';
     }
 
     var ip_arr = host_ip.split('.');
@@ -44,7 +41,7 @@ function FindProxyForURL(url, host) {
 
     if (isIpInList(ip_int, whiteips) || isIpInList(ip_int, specialips)) {
         alert('-----DERECT-----');
-        return "DIRECT";
+        return 'DIRECT';
     } else {
         alert('+++++PROXY+++++');
         return proxy;
